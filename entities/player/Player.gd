@@ -4,9 +4,10 @@ var velocity = Vector2.ZERO
 
 signal scene_change
 
-const ACC = 500
-const SPEED = 60
-const FRIC = 500
+# Exports
+export var acceleration = 500
+export var maxSpeed = 60
+export var friction_force = 500
 
 onready var player = $AnimationPlayer
 onready var tree = $AnimationTree
@@ -23,10 +24,10 @@ func _physics_process(delta):
 		tree.set("parameters/Idle/blend_position", input_vector)
 		tree.set("parameters/Run/blend_position", input_vector)
 		state.travel("Run")
-		velocity = velocity.move_toward(input_vector * SPEED, ACC * delta)
+		velocity = velocity.move_toward(input_vector * maxSpeed, acceleration * delta)
 	else:
 		state.travel("Idle")
-		velocity = velocity.move_toward(Vector2.ZERO, FRIC * delta)
+		velocity = velocity.move_toward(Vector2.ZERO, friction_force * delta)
 
 	velocity = move_and_slide(velocity)
 	
