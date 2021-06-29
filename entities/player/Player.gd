@@ -30,11 +30,11 @@ func _physics_process(delta):
 
 	velocity = move_and_slide(velocity)
 	
-	for i in get_slide_count():
-		var collision = get_slide_collision(i)
-		if collision.collider is TileMap:
-			var tile_pos = collision.collider.world_to_map(position)
-			tile_pos -= collision.normal
-			var tile_id = collision.collider.get_cellv(tile_pos)
-			if tile_id == 2:
-				emit_signal("scene_change")
+#	for i in get_slide_count():
+#		var collision = get_slide_collision(i)
+#		if collision.collider is TileMap:
+#			var tile_pos = collision.collider.world_to_map(position)
+#			tile_pos -= collision.normal
+#			var tile_id = collision.collider.get_cellv(tile_pos)
+#			if tile_id == 2:
+#				emit_signal("scene_change")
