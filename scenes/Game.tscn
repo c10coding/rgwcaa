@@ -6,6 +6,5 @@
 [node name="Game" type="Node2D"]
 
 [node name="EmptyRoom" parent="." instance=ExtResource( 2 )]
-position = Vector2( -4.56276, -1.38077 )
 
 [node name="Fade" parent="." instance=ExtResource( 1 )]
