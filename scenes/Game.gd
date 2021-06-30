@@ -10,7 +10,7 @@ func load_scene(scene_name):
 	scene.connect("load_scene", self, "scene_change")
 
 func init():
-	load_scene("Facility")
+	load_scene("MainRoom")
 
 func _ready():
 	call_deferred("init")
@@ -21,3 +21,8 @@ func scene_change(scene, coords):
 	load_scene(scene)
 	$Fade/AnimationPlayer.play_backwards("Fade")
 	$Player.position = coords
+
+
+func _on_Button_button_up():
+	print("Hello")
+	pass # Replace with function body.
