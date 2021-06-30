@@ -7,5 +7,6 @@ func _ready():
 	pass # Replace with function body.
 
 func _on_InventoryButton_button_up():
-	var game_node = $".."
-	game_node.add_child(inventory.instance())
+	var canvas_layer = $"../CanvasLayer"
+	print(canvas_layer.name)
+	canvas_layer.add_child(inventory.instance())

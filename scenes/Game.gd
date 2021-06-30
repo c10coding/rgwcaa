@@ -1,5 +1,7 @@
 extends Node2D
 
+var fade = preload("res://scenes/Fade.tscn")
+
 const SCENE_PATH = "res://scenes/%s.tscn"
 
 func load_scene(scene_name):
@@ -16,12 +18,12 @@ func _ready():
 	call_deferred("init")
 
 func scene_change(scene, coords):
+	add_child(fade.instance())
 	$Fade/AnimationPlayer.play("Fade")
 	yield($Fade/AnimationPlayer, "animation_finished")
 	load_scene(scene)
 	$Fade/AnimationPlayer.play_backwards("Fade")
 	$Player.position = coords
-
 
 func _on_Button_button_up():
 	print("Hello")
