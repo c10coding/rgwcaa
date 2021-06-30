@@ -10,7 +10,7 @@ func load_scene(scene_name):
 	scene.connect("load_scene", self, "scene_change")
 
 func init():
-	load_scene("MainRoom")
+	load_scene("Facility")
 
 func _ready():
 	call_deferred("init")

@@ -265,6 +265,7 @@ resource_local_to_scene = true
 script = ExtResource( 5 )
 
 [node name="Background" parent="." instance=ExtResource( 4 )]
+position = Vector2( -8, 0 )
 region_rect = Rect2( 0, -308, 1336, 488 )
 
 [node name="TileMap" parent="." instance=ExtResource( 3 )]
