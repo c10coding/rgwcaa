@@ -24,6 +24,7 @@ func scene_change(scene, coords):
 	load_scene(scene)
 	$Fade/AnimationPlayer.play_backwards("Fade")
 	$Player.position = coords
+	$Fade.queue_free()
 
 func _on_Button_button_up():
 	print("Hello")
