@@ -10,13 +10,16 @@ config_version=4
 
 _global_script_classes=[  ]
 _global_script_class_icons={
-
 }
 
 [application]
 
 config/name="RGWC"
 run/main_scene="res://scenes/Game.tscn"
+
+[autoload]
+
+Globals="*res://util/Globals.gd"
 
 [display]
 
@@ -75,6 +78,6 @@ move_down={
 
 [rendering]
 
-quality/2d/use_pixel_snap=true
-environment/default_environment="res://default_env.tres"
 2d/snapping/use_gpu_pixel_snap=true
+environment/default_environment="res://default_env.tres"
+quality/2d/use_pixel_snap=true

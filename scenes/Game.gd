@@ -1,30 +1,39 @@
 extends Node2D
 
-var fade = preload("res://scenes/Fade.tscn")
 
-const SCENE_PATH = "res://scenes/%s.tscn"
+var fade = preload("res://scene_assets/Fade.tscn")
 
-func load_scene(scene_name):
-	if self.has_node("Scene"):
-		self.remove_child(self.get_node("Scene"))
-	var scene = load(SCENE_PATH % scene_name).instance()
-	self.add_child(scene)
-	scene.connect("load_scene", self, "scene_change")
 
-func init():
-	load_scene("MainRoom")
-
-func _ready():
-	call_deferred("init")
-
-func scene_change(scene, coords):
+func load_scene(new_scene):
+	
+	var scene = load(Globals.scenes[new_scene]).instance()
+	
+	var player = load("res://entities/player/Player.tscn").instance()
+	
 	add_child(fade.instance())
+	
 	$Fade/AnimationPlayer.play("Fade")
 	yield($Fade/AnimationPlayer, "animation_finished")
-	load_scene(scene)
+	
+	self.get_child(0).queue_free()
+	
+	self.add_child(scene)
+	
+	scene.add_child(player)
+	
+	player.global_position = Globals.pos[new_scene]
+	
 	$Fade/AnimationPlayer.play_backwards("Fade")
-	$Player.position = coords
+	yield($Fade/AnimationPlayer, "animation_finished")
+	
+	$Fade.queue_free()
 
-func _on_Button_button_up():
-	print("Hello")
-	pass # Replace with function body.
+
+func init():
+	
+	self.load_scene("MainRoom")
+
+
+func _ready():
+	
+	self.call_deferred("init")

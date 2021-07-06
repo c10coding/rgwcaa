@@ -1,10 +1,29 @@
-[gd_scene format=2]
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/ui/inventory_button.png" type="Texture" id=1]
+[ext_resource path="res://ui/InventoryButton.gd" type="Script" id=2]
 
 [node name="UI" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = -75.0
-margin_bottom = -47.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="UI Layer" type="CanvasLayer" parent="."]
+
+[node name="InventoryButton" type="Button" parent="UI Layer"]
+margin_left = 274.004
+margin_top = 139.3
+margin_right = 318.004
+margin_bottom = 177.3
+focus_mode = 0
+enabled_focus_mode = 0
+icon = ExtResource( 1 )
+flat = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[connection signal="button_up" from="UI Layer/InventoryButton" to="UI Layer/InventoryButton" method="_on_InventoryButton_button_up"]

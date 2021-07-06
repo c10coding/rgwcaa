@@ -210,7 +210,6 @@ graph_offset = Vector2( 103, 47 )
 [node name="Player" type="KinematicBody2D" groups=[
 "Player",
 ]]
-position = Vector2( 160, 90 )
 z_index = 1
 script = ExtResource( 1 )
 
