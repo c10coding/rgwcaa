@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://assets/RoomTileset.png" type="Texture" id=1]
-[ext_resource path="res://util/Portal.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scene_assets/Portal.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/TileMap.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/Background.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/MainRoom.gd" type="Script" id=5]
@@ -261,7 +261,7 @@ resource_local_to_scene = true
 12/shapes = [  ]
 12/z_index = 0
 
-[node name="Scene" type="Node2D"]
+[node name="MainRoom" type="Node2D"]
 script = ExtResource( 5 )
 
 [node name="Background" parent="." instance=ExtResource( 4 )]
@@ -274,4 +274,8 @@ tile_set = SubResource( 8 )
 [node name="Portal" parent="." instance=ExtResource( 2 )]
 position = Vector2( 88, 151 )
 scale = Vector2( 0.5, 1 )
+
+[node name="SpawnPosition" type="Position2D" parent="."]
+position = Vector2( 160, 90 )
+
 [connection signal="body_entered" from="Portal" to="." method="_on_Portal_body_entered"]

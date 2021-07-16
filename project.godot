@@ -17,6 +17,10 @@ _global_script_class_icons={
 config/name="RGWC"
 run/main_scene="res://scenes/Game.tscn"
 
+[autoload]
+
+Globals="*res://util/Globals.gd"
+
 [display]
 
 window/size/width=320
