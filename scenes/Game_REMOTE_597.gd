@@ -3,6 +3,7 @@ extends Node2D
 
 var fade = preload("res://scene_assets/Fade.tscn")
 
+
 func load_scene(new_scene):
 	
 	var scene = load(Globals.scenes[new_scene]).instance()
