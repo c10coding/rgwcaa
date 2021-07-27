@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/inventory_button.png-fcfbf8dba54b071c31edd183e23a6d7e.stex"
+path="res://.import/chat_bubble.png-d8b77c9db6a6e06a2e48fb41b87b7d2a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui/inventory_button.png"
-dest_files=[ "res://.import/inventory_button.png-fcfbf8dba54b071c31edd183e23a6d7e.stex" ]
+source_file="res://assets/ui/chat_bubble.png"
+dest_files=[ "res://.import/chat_bubble.png-d8b77c9db6a6e06a2e48fb41b87b7d2a.stex" ]
 
 [params]
 

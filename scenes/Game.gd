@@ -31,8 +31,10 @@ func load_inventory_ui():
 	self.add_child(inventory_ui.instance())
 
 func init():
+	pass
 	self.load_scene(null, "MainRoom")
 	self.load_inventory_ui()
 
 func _ready():
+	pass
 	self.call_deferred("init")
