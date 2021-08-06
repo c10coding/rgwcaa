@@ -40,6 +40,7 @@ func _get_node(searched_scene, node_name):
 			return node
 	return null
 	
+# There has to be a cleaner way to get nodes... I must have a fundamental misunderstanding. Someone can re-write this
 func _input(event):
 	
 	var is_just_pressed = event.is_action_pressed("ui_cancel")
@@ -55,6 +56,3 @@ func init():
 
 func _ready():
 	init()
-	for child in current_scene.get_children():
-		print(child.name)
-	
