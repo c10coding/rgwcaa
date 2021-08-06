@@ -16,7 +16,7 @@ var ui = {
 	}
 }
 
-var pos = {
+var player_spawn_location = {
 	"MainRoom": Vector2(160, 90),
 	"Hall": Vector2(160, 90)
 }
